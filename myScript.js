@@ -1,5 +1,5 @@
 function myFunction() {
-    document.getElementById("demo").innerHTML="why is biruk dancing.";
+    document.getElementById("demo").innerHTML="level 10 gyaat.";
 
 }
 function addGif() {
