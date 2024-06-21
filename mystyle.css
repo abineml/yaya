@@ -13,9 +13,7 @@ h2 {
  color: goldrod;
     margin-left: 20px;
     font-family:Impact, fantasy
-    border-color: black;
-    
-
+     border: 2px solid black;
 }
 h3 {
     color: goldrod;
