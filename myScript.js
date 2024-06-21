@@ -1,31 +1,26 @@
 function myFunction() {
-    document.getElementById("demo").innerHTML="Never gonna give you up never gonna let you down.";
+    document.getElementById("demo").innerHTML="why is biruk dancing.";
+
+}
+function addGif() {
+    // Create a new image element
+    const gifImage = document.createElement('img');
+
+    // Set the src attribute to the URL of your GIF
+    gifImage.src = 'path/to/your/gif.gif';
+
+    // Set alt text for accessibility
+    gifImage.alt = 'GIF Image';
+
+    // Optionally, add a class for styling
+    gifImage.classList.add('gif-class'); // Replace 'gif-class' with your desired class name
+
+    // Select the container where you want to append the GIF
+    const gifContainer = document.getElementById('gifContainer');
+
+    // Append the image element to the container
+    gifContainer.appendChild(https://images.app.goo.gl/6HvhvQmruU29pE548);
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIF Button Example</title>
-    <style>
-        .gif-button {
-            background-size: cover;
-            width: 200px;
-            height: 100px;
-            border: none;
-        }
-    </style>
-</head>
-<body>
-    <button id="gifButton" onclick="setGif()">Click Me</button>
 
-    <script>
-        function setGif() {
-            const button = document.getElementById('gifButton');
-            button.classList.add('gif-button');
-            button.style.backgroundImage = 'url("https://images.app.goo.gl/JyXVxkn7kozM63467")';
-        }
-    </script>
-</body>
-</html>
+
