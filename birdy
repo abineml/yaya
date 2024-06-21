@@ -6,7 +6,7 @@ const ctx = canvas.getContext('2d');
 let birdX = 50;
 let birdY = canvas.height / 2;
 let birdVelocity = 0;
-const gravity = 0.5;
+const gravity = 0.6;
 const jumpStrength = -10;
 
 // Pipe variables
@@ -17,12 +17,15 @@ const pipeSpeed = 2;
 const pipeFrequency = 150; // Distance between consecutive pipes
 
 let score = 0;
+let gameover = false;
 
 // Game loop
 function gameLoop() {
     update();
     draw();
-    requestAnimationFrame(gameLoop);
+    if (!gameover) {
+        requestAnimationFrame(gameLoop);
+    }
 }
 
 function update() {
@@ -40,8 +43,9 @@ function update() {
         pipe.x -= pipeSpeed;
 
         // Check for collision with bird
-        if (birdX + 20 > pipe.x && birdX < pipe.x + pipeWidth && (birdY < pipe.y || birdY + 20 > pipe.y + pipeGap)) {
-            gameOver();
+        if (birdX + 20 > pipe.x && birdX < pipe.x + pipeWidth &&
+            (birdY < pipe.y || birdY + 20 > pipe.y + pipeGap)) {
+            gameover = true;
         }
 
         // Update score
@@ -76,11 +80,17 @@ function draw() {
     ctx.fillStyle = '#000';
     ctx.font = '24px Arial';
     ctx.fillText(`Score: ${score}`, 10, 30);
+
+    // Game over text
+    if (gameover) {
+        ctx.fillStyle = 'red';
+        ctx.fillText('Game Over!', canvas.width / 2 - 50, canvas.height / 2);
+    }
 }
 
 // Event listener for spacebar to flap bird
-document.addEventListener('keydown', function(event) {
-    if (event.code === 'Space') {
+document.addEventListener('keydown', function (event) {
+    if (event.code === 'Space' && !gameover) {
         birdVelocity = jumpStrength;
     }
 });
@@ -94,12 +104,4 @@ function createPipe() {
     pipes.push({ x: canvas.width, y: pipeY, passed: false });
 }
 
-function gameOver() {
-    alert(`Game Over! Your score: ${score}`);
-    // Reset game variables for a new game
-    birdX = 50;
-    birdY = canvas.height / 2;
-    birdVelocity = 0;
-    pipes = [];
-    score = 0;
-}
+
