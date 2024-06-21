@@ -7,7 +7,7 @@ function addGif() {
     const gifImage = document.createElement('img');
 
     // Set the src attribute to the URL of your GIF
-    gifImage.src = 'path/to/your/gif.gif';
+    gifImage.src = 'https://images.app.goo.gl/6HvhvQmruU29pE548';
 
     // Set alt text for accessibility
     gifImage.alt = 'GIF Image';
@@ -19,7 +19,7 @@ function addGif() {
     const gifContainer = document.getElementById('gifContainer');
 
     // Append the image element to the container
-    gifContainer.appendChild(https://images.app.goo.gl/6HvhvQmruU29pE548);
+    gifContainer.appendChild(gifImage);
 }
 
 
