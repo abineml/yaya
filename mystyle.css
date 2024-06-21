@@ -5,12 +5,15 @@ body {
 h1 {
     color: goldrod;
     margin-left: 20px;
+    font-family: 'Courier New', monospace;
 }
 h2 {
  color: goldrod;
     margin-left: 20px;
+    font-family:Impact, fantasy
 }
 h3 {
     color: goldrod;
     margin-left: 20px;
+   
 }
